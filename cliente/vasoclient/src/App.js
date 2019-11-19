@@ -11,19 +11,13 @@ class App extends Component {
       <Router>
         <div className="App">
           <div className="App__Aside">
-            <img align="center" id="imagenPrincipal" src ={imagenPrincipal} width="800" height="700"/>  
+            <img align="center" id="imagenPrincipal" src ={imagenPrincipal} width="800" height="672"/>  
           </div>
 
           <div className="App__Form">
             <div className="PageSwitcher">
               <NavLink to="/iniciarSesion" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Iniciar Sesion</NavLink>
               <NavLink exact to="/" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Registrarse</NavLink>
-            </div>
-            
-            <div className="FormTitle">
-              <NavLink to="/iniciarSesion" activeClassName="FormTitle__Link--Active" 
-              className="FormTitle__Link">Iniciar Sesion</NavLink> or <NavLink exact to="/"
-              activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Registrarse</NavLink>
             </div>
           
             <Route exact path="/" component= {signupForm}>
