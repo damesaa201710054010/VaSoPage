@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import imagenPrincipal from '../Image/enlamano.jpg';
+import request from 'superagent';
 import '../App.css';
 
 class signinForm extends Component {
@@ -17,7 +18,7 @@ class signinForm extends Component {
     handleSubmit(e){
         e.preventDefault();
         console.log("The form was submitted with the following data:");
-        console.log(this.state);
+        
     }
 
 
@@ -27,6 +28,15 @@ class signinForm extends Component {
         let name = target.name;
         this.setState ({
             [name] : value
+        });
+    }
+
+    componentDidMount = () => {
+        request
+        .post('http://127.0.0.1:3000/login')
+        .send(this.state)
+        .end((err, res) => {
+            console.log(res)
         });
     }
 
