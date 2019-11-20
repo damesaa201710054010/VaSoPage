@@ -1,20 +1,19 @@
-
 const { Router } = require('express');
 const connectionCtrl = {};
-const Connection = require('../models/Connection');
+const Connection = require('../models/modelcoment');
 const router = Router();
 
 connectionCtrl.expose = async (req, res) => {
     console.log(req.body.queryResulte);
-    consulta = Connection.find({ "tipoDeActividad": "inscripcion" });
-    response = "Para 2020-1 de agosto 6 a Noviembre 22";
+    consulta = Connection.save({ "nombre":req["nombre"], "producto":req["producto"], "comentario":req["comentario"] });
+    response = true;
     res.json({
-        "fulfillmentText": response
+        "res": response
     });
 
 };
 
 router.route('/')
-    .post(expose);
+    .post(connectionCtrl.expose);
 
 module.exports = router;
