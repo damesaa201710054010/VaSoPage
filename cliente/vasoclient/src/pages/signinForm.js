@@ -27,6 +27,11 @@ class signinForm extends Component {
                 this.setState({
                     estado: respuesta['res']
                 })
+                if(this.state.estado){
+                    alert('Bienvenido')
+                }else {
+                    alert('Su clave o contraseña no son validos')
+                }
             });
     }
 

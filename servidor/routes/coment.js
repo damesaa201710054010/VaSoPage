@@ -5,12 +5,15 @@ const Connection = require('../models/modelcoment');
 const router = Router();
 
 connectionCtrl.expose = async (req, res) => {
+    //usuario: req.body.name,
     var savedata = new Connection({
-        usuario: '', producto: req.body.productoEs, comentario: req.body.coment 
+        producto: req.body.productoEs, comentario: req.body.coment 
     }).save(function (err, result) {
         if (err) throw err;
         if (result) {
             res.json({"res": true})
+        }else {
+            res.json({"res": false})
         }
     })
 };
