@@ -53,7 +53,7 @@ class signupForm extends Component {
         const variable = this.state.estado;
         if (variable) {
             return (
-                <Redirect from="/iniciarSesion" to="/coments" />
+                <Redirect from="/" to="/iniciarSesion" />
             );
         } else {
             return (

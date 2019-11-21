@@ -60,41 +60,33 @@ class coments extends Component {
     }
 
     render() {
-        /*const {nombre} = this.props;
-        console.log({nombre});*/
-        if (this.state.estado) {
-            return (
-                <Redirect from="/coments" to="/coments" />
-            );
-        } else {
-            return (
-                <div className="imagenes" align="center">
-                    <div className="App__Form1" >
-                        <div className="FormCenter" >
-                            <form onSubmit={this.handleSubmit} className="FormFields" >
-                                <div className="FormField" >
-                                    <label className="FormField__Label" htmlFor="producto">Seleccione el producto a calificar</label>
-                                    <select id="productoEs" value={this.state.productoEs} onChange={this.handletChange} name="productoEs">
-                                        {this.state.productos.map(producto => <option value={producto}>{producto}</option>)}
-                                    </select>
-                                </div>
-                                <div className="FomField">
-                                    <label className="FormField__Label" htmlFor="comentario">Escriba los comentarios al respecto</label>
-                                    <textarea rows="4" cols="20" type="text" id="coment" className="FormField__Input2" placeholder="Escriba su comentario de calificacion" name="coment"
-                                        value={this.state.coment} onChange={this.handletChange} maxLength="150" />
-                                </div>
-                                <h1>
-                                    -------------------------
-                            </h1>
-                                <div className="FormField" align="center">
-                                    <button className="FormField__Button2 mr-20" >Registrar calificacion</button>
-                                </div>
-                            </form>
-                        </div>
+        return (
+            <div className="imagenes" align="center">
+                <div className="App__Form1" >
+                    <div className="FormCenter" >
+                        <form onSubmit={this.handleSubmit} className="FormFields" >
+                            <div className="FormField" >
+                                <label className="FormField__Label" htmlFor="producto">Seleccione el producto a calificar</label>
+                                <select id="productoEs" value={this.state.productoEs} onChange={this.handletChange} name="productoEs">
+                                    {this.state.productos.map(producto => <option value={producto}>{producto}</option>)}
+                                </select>
+                            </div>
+                            <div className="FomField">
+                                <label className="FormField__Label" htmlFor="comentario">Escriba los comentarios al respecto</label>
+                                <textarea rows="4" cols="20" type="text" id="coment" className="FormField__Input2" placeholder="Escriba su comentario de calificacion" name="coment"
+                                    value={this.state.coment} onChange={this.handletChange} maxLength="150" />
+                            </div>
+                            <h1>
+                                -------------------------
+                        </h1>
+                            <div className="FormField" align="center">
+                                <button className="FormField__Button2 mr-20" >Registrar calificacion</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            );
-        }
+            </div>
+        );
     }
 }
 

@@ -7,9 +7,11 @@ import coments from './pages/coments';
 const Routes = () => {
     return (
         <Switch>
-            <Route exact path='/' component = {signupForm}/>
-            <Route path='/iniciarSesion' component={signinForm}/>
-            <Route path='/coments' component={coments}></Route>
+            <Route exact path='/' component = {signupForm}>    
+            </Route>   
+            <Route path='/iniciarSesion' component={signinForm}>
+            </Route>
+            <Route path='/coments/' component={coments}></Route>
         </Switch>
     )
     //<Route path='/coments' component={coments}></Route>
