@@ -5,8 +5,6 @@ const cors = require('cors');
 var path = require('path');
 const app = express();
 
-//var ip = process.env.IP || "127.0.0.1";
-
 app.set('port', process.env.PORT || 3001);
 
 app.use(bodyParser.urlencoded(

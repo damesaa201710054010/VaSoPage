@@ -4,16 +4,19 @@ const Connection = require('../models/modelproduct');
 const router = Router();
 
 connectionCtrl.expose = async (req, res) => {
-    console.log(req.body.queryResulte);
-    consulta = Connection.find();
-    response = consuta;
-    res.json({
-        "res": response
-    });
+    Connection.find({},{"nombre":1,"_id":0},
+        function callback(error, a) {
+            const respuesta = []
+            for(var i = 0; i < a.length; i++)
+            {
+                respuesta.push(a[i].nombre);
+            }
+            res.json(respuesta)
+        });
 
 };
 
 router.route('/')
-    .post(connectionCtrl.expose);
+    .get(connectionCtrl.expose);
 
 module.exports = router;
