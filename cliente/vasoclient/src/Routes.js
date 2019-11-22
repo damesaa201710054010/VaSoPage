@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route} from 'react-router-dom';
+import { Switch, Route, Router} from 'react-router-dom';
 import signupForm from './pages/signupForm';
 import signinForm from './pages/signinForm';
 import coments from './pages/coments';
@@ -9,9 +9,9 @@ const Routes = () => {
         <Switch>
             <Route exact path='/' component = {signupForm}>    
             </Route>   
-            <Route path='/iniciarSesion' component={signinForm}>
+            <Route exact  path='/iniciarSesion' component={signinForm}>
             </Route>
-            <Route path='/coments/' component={coments}></Route>
+            <Route exact  path='/coments' component={coments}></Route>
         </Switch>
     )
     //<Route path='/coments' component={coments}></Route>
