@@ -7,7 +7,7 @@ const router = Router();
 connectionCtrl.expose = async (req, res) => {
     //usuario: req.body.name,
     var savedata = new Connection({
-        producto: req.body.productoEs, comentario: req.body.coment 
+        usuario: req.body.name, producto:  req.body.productoEs, comentario: req.body.coment 
     }).save(function (err, result) {
         if (err) throw err;
         if (result) {

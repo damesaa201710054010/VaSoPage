@@ -4,7 +4,7 @@ const modelcoment = new Schema(
     {
         usuario: {
             type: String,
-            required: false,
+            required: true,
             unique: false,
             trim: true
         },

@@ -11,7 +11,6 @@ const Routes = () => {
             </Route>   
             <Route exact  path='/iniciarSesion' component={signinForm}>
             </Route>
-            <Route exact  path='/coments' component={coments}></Route>
         </Switch>
     )
     //<Route path='/coments' component={coments}></Route>

@@ -7,7 +7,6 @@ class coments extends Component {
     constructor() {
         super();
         this.state = {
-            name: '',
             productos: [],
             productoEs: '',
             coment: '',
@@ -24,7 +23,7 @@ class coments extends Component {
         superagent
             .post('http://localhost:3001/api/coment')
             //name: this.state.name,
-            .send({ productoEs: this.state.productoEs, coment: this.state.coment })
+            .send({ name: this.props.em, productoEs: this.state.productoEs, coment: this.state.coment })
             .end((err, res) => {
                 var respuesta = JSON.parse(res.text)
                 this.setState({

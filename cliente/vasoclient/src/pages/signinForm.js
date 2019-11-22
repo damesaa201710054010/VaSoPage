@@ -51,7 +51,7 @@ class signinForm extends Component {
         const variable = this.state.estado; 
         if(variable) {
             return (
-                <Redirect from="/iniciarSesion" to="/coments"/>
+                <Coments em = {this.state.email}></Coments>
             );
         } else {
             return (
