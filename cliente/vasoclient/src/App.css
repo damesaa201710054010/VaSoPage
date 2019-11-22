@@ -33,6 +33,36 @@ h1 {
   background-color: #66DAC7;
 }
 
+.primera {
+  position: absolute;
+  top: 250px;
+  left : 270px;
+  z-index: 1;
+}
+
+.segunda
+{
+  width:800px; 
+  height: 673px;
+  z-index: -1;
+}
+
+.letri {
+  position: absolute;
+  width: 300px; 
+  height: 300px;
+  left: 1000px;
+  z-index: 1;
+}
+
+.letri2 {
+  position: absolute;
+  width: 200px; 
+  height: 200px;
+  z-index: 1;
+}
+
+
 .App__Aside1 {
   width: 105%;
 }

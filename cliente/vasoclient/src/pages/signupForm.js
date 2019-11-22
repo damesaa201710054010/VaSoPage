@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link, NavLink, Redirect } from 'react-router-dom';
 import imagenPrincipal from '../Image/enlamano.jpg';
+import logo from '../Image/19a8e9e2-9be8-4d6c-9ae5-b59656a0f697_200x200.png';
+import letra from '../Image/letras2.png';
 import '../App.css';
 const superagent = require('superagent');
 
@@ -29,7 +31,7 @@ class signupForm extends Component {
             .send({
                 name: this.state.name, edad: this.state.edad, ciudad: this.state.ciudad
                 , direccion: this.state.direccion, email: this.state.email, password: this.state.password,
-                estrato: this.state.estrato 
+                estrato: this.state.estrato
             })
             .end((err, res) => {
                 var respuesta = JSON.parse(res.text)
@@ -59,7 +61,8 @@ class signupForm extends Component {
             return (
                 <div className="App">
                     <div className="App__Aside">
-                        <img align="center" id="imagenPrincipal" src={imagenPrincipal} width="800" height="720" />
+                        <img className="segunda" align="center" id="imagenPrincipal" src={imagenPrincipal} />
+                        <img className="primera" align="center" id="logo" src={logo} />
                     </div>
                     <div className="App__Form">
                         <div className="PageSwitcher">
@@ -71,28 +74,28 @@ class signupForm extends Component {
                                 <div className="FormField">
                                     <label className="FormField__Label" htmlFor="name">
                                         Nombre Completo
-                        </label>
+                                    </label>
                                     <input type="text" id="name" className="FormField__Input" placeholder="Ingresa tu Nombre Completo" name="name"
                                         value={this.state.name} onChange={this.handletChange} />
                                 </div>
                                 <div className="FormField">
                                     <label className="FormField__Label" htmlFor="edad">
                                         edad
-                        </label>
+                                    </label>
                                     <input type="int" id="edad" className="FormField__Input" placeholder="Ingresa su edad" name="edad"
                                         value={this.state.edad} onChange={this.handletChange} />
                                 </div>
                                 <div className="FormField">
                                     <label className="FormField__Label" htmlFor="ciudad">
                                         Ciudad de residencia
-                        </label>
+                                    </label>
                                     <input type="text" id="ciudad" className="FormField__Input" placeholder="Ingrese la ciudad en la que reside actualmente" name="ciudad"
                                         value={this.state.ciudad} onChange={this.handletChange} />
                                 </div>
                                 <div className="FormField">
                                     <label className="FormField__Label" htmlFor="direccion">
                                         Direccion de residencia
-                        </label>
+                                    </label>
                                     <input type="text" id="direccion" className="FormField__Input" placeholder="Ingrese la direccion de su residencia" name="direccion"
                                         value={this.state.direccion} onChange={this.handletChange} />
                                 </div>
@@ -119,7 +122,6 @@ class signupForm extends Component {
                                         accepto todas las declaraciones en<a href="" className="FormField__TermsLink"> terminos de servicio</a>
                                     </label>
                                 </div>
-
                                 <div className="FormField" align="center">
                                     <button className="FormField__Button mr-20">Registrarse</button> <Link to="/iniciarSesion"
                                         className="FormField__Link">Ya soy miembro</Link>

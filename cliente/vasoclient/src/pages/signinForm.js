@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {  Link, NavLink, Route , Redirect, Switch } from 'react-router-dom';
 import imagenPrincipal from '../Image/enlamano.jpg';
+import logo from '../Image/19a8e9e2-9be8-4d6c-9ae5-b59656a0f697_200x200.png';
+import letra from '../Image/letras2.png';
 import '../App.css';
 import  Coments from './coments';
 const superagent = require('superagent');
@@ -55,7 +57,8 @@ class signinForm extends Component {
             return (
                 <div className="App">
                     <div className="App__Aside">
-                        <img align="center" id="imagenPrincipal" src={imagenPrincipal} width="800" height="720" />
+                        <img className="segunda" align="center" id="imagenPrincipal" src={imagenPrincipal} />
+                        <img className="primera" align="center" id="logo" src={logo} />
                     </div>
                     <div className="App__Form">
                         <div className="PageSwitcher">
@@ -79,6 +82,7 @@ class signinForm extends Component {
                                         className="FormField__Link">Crear una cuenta</Link>
                                 </div>
                             </form>
+                            <img className="letri" align="center"  id="letras" src={letra} />
                         </div>
                     </div>
                 </div>
