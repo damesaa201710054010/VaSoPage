@@ -7,6 +7,7 @@ class coments extends Component {
     constructor() {
         super();
         this.state = {
+            email: '',
             productos: [],
             productoEs: '',
             coment: '',
@@ -21,9 +22,9 @@ class coments extends Component {
         console.log(this.state.productoEs);
         console.log(this.state.coment);
         superagent
-            .post('http://localhost:3001/api/coment')
+            .post('https://vasopharmacy.de/api/login')
             //name: this.state.name,
-            .send({ name: this.props.em, productoEs: this.state.productoEs, coment: this.state.coment })
+            .send({ name: this.state.email, productoEs: this.state.productoEs, coment: this.state.coment })
             .end((err, res) => {
                 var respuesta = JSON.parse(res.text)
                 this.setState({
@@ -48,8 +49,11 @@ class coments extends Component {
     }
 
     componentDidMount = () => {
+        this.setState({
+            email: this.props.em
+        });
         superagent
-            .get('http://localhost:3001/api/products')
+            .get('https://vasopharmacy.de/api/login')
             .end((err, res) => {
                 const prod = JSON.parse(res.text)
                 this.setState({

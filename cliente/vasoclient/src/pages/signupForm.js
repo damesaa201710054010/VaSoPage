@@ -27,7 +27,7 @@ class signupForm extends Component {
     handleSubmit(e) {
         e.preventDefault();
         superagent
-            .post('http://localhost:3001/api/register')
+            .post('https://vasopharmacy.de/api/register')
             .send({
                 name: this.state.name, edad: this.state.edad, ciudad: this.state.ciudad
                 , direccion: this.state.direccion, email: this.state.email, password: this.state.password,
